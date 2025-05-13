@@ -19,6 +19,11 @@ header {
   padding: 1rem;
 }
 
+#panel-izquierda a {
+      display: block;  
+      margin-bottom: 10px;
+    }
+
 #principal {
   grid-column: 2 / 3;
   padding: 1rem;
@@ -42,8 +47,8 @@ header {
 
 .card-img-top {
   width: 100%;
-  height: 200px; /* Alto fijo para mantener proporciones */
-  object-fit: cover; /* Evita distorsión de la imagen */
+  height: 200px;
+  object-fit: cover; 
 }
 
 .card-body {

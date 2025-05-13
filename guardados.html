@@ -9,12 +9,7 @@
   />
   <link rel="stylesheet" href="style.css" />
   <title>Series Guardadas</title>
-  <style>
-    #panel-izquierda a {
-      display: block;  /* Hace que cada enlace sea un bloque, ocupando toda la línea */
-      margin-bottom: 10px;  /* Añade espacio entre los enlaces */
-    }
-  </style>
+
 </head>
 <body>
   <main class="m-2">
@@ -26,7 +21,6 @@
       <a href="./guardados.html">Guardados</a>
     </nav>
     <section id="principal">
-      <!-- Selector de ordenamiento -->
       <label for="ordenar">Ordenar por:</label>
       <select id="ordenar" class="form-select mb-3">
         <option value="default" disabled selected>Seleccionar</option>
@@ -34,7 +28,6 @@
       </select>
 
       <div id="series">
-        <!-- Aquí se mostrarán las series guardadas -->
       </div>
     </section>
   </main>
@@ -43,14 +36,14 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const seriesContainer = document.getElementById('series');
-      const ordenarSelect = document.getElementById('ordenar');  // Selector de ordenamiento
+      const ordenarSelect = document.getElementById('ordenar');  
 
-      // Cargar las series guardadas desde localStorage
+      
       const savedSeriesData = JSON.parse(localStorage.getItem('savedSeries')) || [];
 
-      // Función para crear y mostrar las series en el DOM
+      
       const displaySeries = (series) => {
-        seriesContainer.innerHTML = '';  // Limpiar el contenedor
+        seriesContainer.innerHTML = '';  
 
         series.forEach(data => {
           const serie = new Serie(
@@ -66,14 +59,12 @@
         });
       };
 
-      // Función para ordenar las series por nombre
       const ordenarPorNombre = (series) => {
         return series.sort((a, b) => a.name.localeCompare(b.name));
       };
 
-      // Función que maneja el cambio en el selector de ordenamiento
       ordenarSelect.addEventListener('change', () => {
-        let sortedSeries = [...savedSeriesData];  // Hacer una copia de los datos
+        let sortedSeries = [...savedSeriesData];  s
 
         switch (ordenarSelect.value) {
           case 'nombre':
@@ -83,10 +74,9 @@
             break;
         }
 
-        displaySeries(sortedSeries);  // Mostrar las series ordenadas
+        displaySeries(sortedSeries);  s
       });
 
-      // Inicialmente mostrar las series no ordenadas
       displaySeries(savedSeriesData);
     });
   </script>
