@@ -1,0 +1,68 @@
+main {
+    display: grid;
+    grid-template-rows: auto 1fr;       
+    grid-template-columns: 200px 1fr;   
+    grid-template-areas: 
+        "header header"
+        "nav principal";
+    min-height: 100vh;
+}
+
+header {
+    grid-area: header;
+    background-color: #ccc;
+    padding: 1rem;
+}
+
+nav {
+    grid-area: nav;
+    background-color: #ddd;
+    padding: 1rem;
+}
+
+#principal {
+    grid-area: principal;
+    padding: 1rem;
+}
+
+#series {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 1rem;
+}
+
+#seriesGuardadas{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 1rem;
+}
+
+@media (max-width: 899px) {
+    #series {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #seriesGuardadas{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 549px) {
+    #series {
+        grid-template-columns: 1fr;
+    }
+    #seriesGuardadas{
+        grid-template-columns: 1fr;
+    }
+}
+
+button {
+    border-radius: 12px; 
+}
+
+#siguiente{
+   margin-top: 2rem;
+}
+
+#anterior{
+   margin-top: 2rem;
+}
