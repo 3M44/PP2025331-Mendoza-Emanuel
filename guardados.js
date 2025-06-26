@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ordenar = document.getElementById('ordenar');
     const siguiente = document.getElementById('siguiente');
     const anterior = document.getElementById('anterior');
-    const seriesGuardadas = JSON.parse(localStorage.getItem('seriesGuardadas')) || [];
+    const seriesGuardadas = JSON.parse(localStorage.getItem('seriesGuardadas'));
     let seriesMostradas = [...seriesGuardadas];
     let paginaInicio = 0;
 

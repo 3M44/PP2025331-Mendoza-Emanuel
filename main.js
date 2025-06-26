@@ -12,7 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             for (let i = inicio; i <= fin; i++) {
                 promesas.push(fetch(`https://api.tvmaze.com/shows/${i}`)
-                    .then(response => response.json()));
+                        .then(response => {
+                            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                            return response.json();
+                        })
+                );  
             }
 
             const seriesData = await Promise.all(promesas);

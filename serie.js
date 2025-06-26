@@ -9,7 +9,7 @@ class Serie {
     }
 
     static guardarSerie(serie) {
-        let series = JSON.parse(localStorage.getItem('seriesGuardadas')) || [];
+        let series = JSON.parse(localStorage.getItem('seriesGuardadas'));
         if (!series.some(s => s.id === serie.id)) {
             series.push(serie);
             localStorage.setItem('seriesGuardadas', JSON.stringify(series));
@@ -81,7 +81,7 @@ class Serie {
     }
 
     static eliminarSerie(serie) {
-        let series = JSON.parse(localStorage.getItem('seriesGuardadas')) || [];
+        let series = JSON.parse(localStorage.getItem('seriesGuardadas'));
         series = series.filter(s => s.id !== serie.id);
         localStorage.setItem('seriesGuardadas', JSON.stringify(series));
         alert('Serie eliminada correctamente.');
